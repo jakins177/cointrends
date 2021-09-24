@@ -3,6 +3,7 @@ package com.example.cointrends.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.cointrends.R
 import com.example.cointrends.databinding.ActivityMainBinding
 
@@ -15,6 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-      //  binding.bottomNavigation.setupWithNavController(navHostFragment.navController)
+        binding.bottomNavigation.setupWithNavController(navHostFragment.navController)
     }
 }

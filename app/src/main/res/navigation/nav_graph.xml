@@ -10,5 +10,15 @@
         android:name="com.example.cointrends.view.TrendsFragment"
         android:label="fragment_trends"
         tools:layout="@layout/fragment_trends"
+        >
+        <action
+            android:id="@+id/action_trendsFragment_to_watchList"
+            app:destination="@id/watchListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchListFragment"
+        android:name="com.example.cointrends.view.WatchList"
+        android:label="WatchList"
+        tools:layout="@layout/fragment_watch_list"
         />
 </navigation>

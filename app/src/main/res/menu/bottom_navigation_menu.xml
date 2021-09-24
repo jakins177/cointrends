@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trendsFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/trending_coins" />
+    <item
+        android:id="@+id/watchListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_watch_list"
+        android:title="@string/watch_list" />
+</menu>
