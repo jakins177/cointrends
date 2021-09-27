@@ -16,12 +16,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cointrends.R
 import com.example.cointrends.adapter.CoinAdapter
 import com.example.cointrends.databinding.FragmentTrendsBinding
+import com.example.cointrends.viewmodel.TrendsViewModel
+
 //TODO call rvList.adapter?.notifyDataSetChanged() when data changes
 class TrendsFragment : Fragment(){
     private var _binding: FragmentTrendsBinding? = null
     private val binding get() = _binding!!
     private val coinAdapter by lazy { CoinAdapter() }
-   // private val katViewModel by activityViewModels<KatViewModel>()
+    private val trendsViewModel by activityViewModels<TrendsViewModel>()
 
 
     override fun onCreateView(
@@ -31,6 +33,8 @@ class TrendsFragment : Fragment(){
     ) = FragmentTrendsBinding.inflate(layoutInflater, container, false).also {
         _binding = it
         initViews()
+
+        trendsViewModel.makeFetch()
     }.root
 
 
@@ -45,6 +49,11 @@ class TrendsFragment : Fragment(){
 //                }
 //            }
 //        })
+
+
+
+
+        //setup recycle view
         rvList.hasFixedSize()
         rvList.layoutManager = LinearLayoutManager(context)
         rvList.itemAnimator = DefaultItemAnimator()

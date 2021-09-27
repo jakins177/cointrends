@@ -15,7 +15,7 @@ object RetrofitInstance {
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
-    val katService: CoinService by lazy { retrofit.create(CoinService::class.java) }
+    val coinService: CoinService by lazy { retrofit.create(CoinService::class.java) }
 
 
 }
