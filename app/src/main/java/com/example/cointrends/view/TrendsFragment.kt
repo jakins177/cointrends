@@ -1,6 +1,7 @@
 package com.example.cointrends.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cointrends.R
 import com.example.cointrends.adapter.CoinAdapter
 import com.example.cointrends.databinding.FragmentTrendsBinding
+import com.example.cointrends.util.ApiState
 import com.example.cointrends.viewmodel.TrendsViewModel
 
 //TODO call rvList.adapter?.notifyDataSetChanged() when data changes
@@ -33,6 +36,7 @@ class TrendsFragment : Fragment(){
     ) = FragmentTrendsBinding.inflate(layoutInflater, container, false).also {
         _binding = it
         initViews()
+        setupObservers()
 
         trendsViewModel.makeFetch()
     }.root
@@ -49,10 +53,6 @@ class TrendsFragment : Fragment(){
 //                }
 //            }
 //        })
-
-
-
-
         //setup recycle view
         rvList.hasFixedSize()
         rvList.layoutManager = LinearLayoutManager(context)
@@ -63,6 +63,23 @@ class TrendsFragment : Fragment(){
 
     }
 
+
+    private fun setupObservers() = with(trendsViewModel) {
+        coinState.observe(viewLifecycleOwner) { state ->
+            binding.pbLoading.isVisible = state is ApiState.Loading
+            if (state is ApiState.Success)
+            {
+                binding.rvList.adapter = CoinAdapter( state.data.coins)
+
+            }
+           // if (state is ApiState.Failure) handleFailure(state.errorMsg)
+        }
+    }
+
+//    private fun handleSuccess(kats: List<Kat>) {
+//       // Log.d(TAG, "ApiState.Success: $kats")
+//        (binding.rvKats.adapter as KatAdapter).updateList(kats)
+//    }
 
 
 

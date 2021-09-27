@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cointrends.R
+import com.example.cointrends.model.CoinX
 
-class CoinAdapter(private val dataSet: Array<String> = arrayOf("apple", "orange", "grape")) :
+class CoinAdapter(private val dataSet:
+                  List<CoinX>? = mutableListOf()) :
     RecyclerView.Adapter<CoinAdapter.TrendViewHolder>() {
 
 
@@ -25,20 +27,23 @@ class CoinAdapter(private val dataSet: Array<String> = arrayOf("apple", "orange"
 
 
     // Return the size of your dataset (invoked by the layout manager)
-    override fun getItemCount() = dataSet.size
+    override fun getItemCount() = dataSet?.size?: 0
 
 
 
     inner class TrendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var coinName : TextView = itemView.findViewById(R.id.coin_info_text_view)
 
-        fun updateInfo (name: String) {
-            coinName.text = name
+        fun updateInfo (item: CoinX?) {
+            if (item != null && item.item != null) {
+
+                coinName.text = item.item.name
+            };
         }
     }
 
     override fun onBindViewHolder(holder: TrendViewHolder, position: Int) {
-        val item = dataSet.get(position)
+        val item = dataSet?.get(position)
         holder.updateInfo(item)
     }
 
