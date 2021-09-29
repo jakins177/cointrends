@@ -72,4 +72,12 @@ dependencies {
     // Image Loading
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Data Persistence *Small Chunks of Data like user preferences*
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+
+
 }
