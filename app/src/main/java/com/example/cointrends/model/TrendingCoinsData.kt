@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class CoinData(
+data class TrendingCoinsData(
     @Json(name = "coins")
     val coins: List<CoinX>?,
     @Json(name = "exchanges")

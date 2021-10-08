@@ -1,30 +1,18 @@
 package com.example.cointrends.view
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.core.view.isVisible
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.cointrends.R
 import com.example.cointrends.adapter.CoinAdapter
 import com.example.cointrends.databinding.FragmentTrendsBinding
 import com.example.cointrends.util.ApiState
-import com.example.cointrends.viewmodel.TrendsViewModel
-import java.util.prefs.Preferences
-
+import com.example.cointrends.viewmodel.CoinsViewModel
 
 
 //TODO call rvList.adapter?.notifyDataSetChanged() when data changes
@@ -35,7 +23,7 @@ class TrendsFragment : Fragment(){
     private val coinAdapter by lazy { CoinAdapter()  { item ->
         Log.i(TAG, "${item.item?.name} clicked ")
     } }
-    private val trendsViewModel by activityViewModels<TrendsViewModel>()
+    private val trendsViewModel by activityViewModels<CoinsViewModel>()
 
 
     override fun onCreateView(
@@ -47,7 +35,7 @@ class TrendsFragment : Fragment(){
         initViews()
         setupObservers()
 
-        trendsViewModel.makeFetch()
+        trendsViewModel.makeTrendsFetch()
     }.root
 
 

@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/watchListFragment"
-        android:name="com.example.cointrends.view.WatchList"
+        android:name="com.example.cointrends.view.WatchListFragment"
         android:label="WatchList"
         tools:layout="@layout/fragment_watch_list"
         />

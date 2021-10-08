@@ -8,8 +8,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12208713272543059" />
         <entry key="app/src/main/res/layout/fragment_trending.xml" value="0.12462006079027356" />
         <entry key="app/src/main/res/layout/fragment_trends.xml" value="0.2074074074074074" />
-        <entry key="app/src/main/res/layout/fragment_watch_list.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/fragment_watch_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/text_row_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/watch_list_text_item.xml" value="0.75" />
       </map>
     </option>
   </component>

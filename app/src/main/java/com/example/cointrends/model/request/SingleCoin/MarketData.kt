@@ -1,0 +1,93 @@
+package com.example.cointrends.model.request.SingleCoin
+
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class MarketData(
+    @Json(name = "ath")
+    val ath: Ath?,
+    @Json(name = "ath_change_percentage")
+    val athChangePercentage: AthChangePercentage?,
+    @Json(name = "ath_date")
+    val athDate: AthDate?,
+    @Json(name = "atl")
+    val atl: Atl?,
+    @Json(name = "atl_change_percentage")
+    val atlChangePercentage: AtlChangePercentage?,
+    @Json(name = "atl_date")
+    val atlDate: AtlDate?,
+    @Json(name = "circulating_supply")
+    val circulatingSupply: Double?,
+    @Json(name = "current_price")
+    val currentPrice: CurrentPrice?,
+    @Json(name = "fdv_to_tvl_ratio")
+    val fdvToTvlRatio: Any?,
+    @Json(name = "fully_diluted_valuation")
+    val fullyDilutedValuation: FullyDilutedValuation?,
+    @Json(name = "high_24h")
+    val high24h: High24h?,
+    @Json(name = "last_updated")
+    val lastUpdated: String?,
+    @Json(name = "low_24h")
+    val low24h: Low24h?,
+    @Json(name = "market_cap")
+    val marketCap: MarketCap?,
+    @Json(name = "market_cap_change_24h")
+    val marketCapChange24h: Double?,
+    @Json(name = "market_cap_change_24h_in_currency")
+    val marketCapChange24hInCurrency: MarketCapChange24hInCurrency?,
+    @Json(name = "market_cap_change_percentage_24h")
+    val marketCapChangePercentage24h: Double?,
+    @Json(name = "market_cap_change_percentage_24h_in_currency")
+    val marketCapChangePercentage24hInCurrency: MarketCapChangePercentage24hInCurrency?,
+    @Json(name = "market_cap_rank")
+    val marketCapRank: Double?,
+    @Json(name = "max_supply")
+    val maxSupply: Double?,
+    @Json(name = "mcap_to_tvl_ratio")
+    val mcapToTvlRatio: Any?,
+    @Json(name = "price_change_24h")
+    val priceChange24h: Double?,
+    @Json(name = "price_change_24h_in_currency")
+    val priceChange24hInCurrency: PriceChange24hInCurrency?,
+    @Json(name = "price_change_percentage_14d")
+    val priceChangePercentage14d: Double?,
+    @Json(name = "price_change_percentage_14d_in_currency")
+    val priceChangePercentage14dInCurrency: PriceChangePercentage14dInCurrency?,
+    @Json(name = "price_change_percentage_1h_in_currency")
+    val priceChangePercentage1hInCurrency: PriceChangePercentage1hInCurrency?,
+    @Json(name = "price_change_percentage_1y")
+    val priceChangePercentage1y: Double?,
+    @Json(name = "price_change_percentage_1y_in_currency")
+    val priceChangePercentage1yInCurrency: PriceChangePercentage1yInCurrency?,
+    @Json(name = "price_change_percentage_200d")
+    val priceChangePercentage200d: Double?,
+    @Json(name = "price_change_percentage_200d_in_currency")
+    val priceChangePercentage200dInCurrency: PriceChangePercentage200dInCurrency?,
+    @Json(name = "price_change_percentage_24h")
+    val priceChangePercentage24h: Double?,
+    @Json(name = "price_change_percentage_24h_in_currency")
+    val priceChangePercentage24hInCurrency: PriceChangePercentage24hInCurrency?,
+    @Json(name = "price_change_percentage_30d")
+    val priceChangePercentage30d: Double?,
+    @Json(name = "price_change_percentage_30d_in_currency")
+    val priceChangePercentage30dInCurrency: PriceChangePercentage30dInCurrency?,
+    @Json(name = "price_change_percentage_60d")
+    val priceChangePercentage60d: Double?,
+    @Json(name = "price_change_percentage_60d_in_currency")
+    val priceChangePercentage60dInCurrency: PriceChangePercentage60dInCurrency?,
+    @Json(name = "price_change_percentage_7d")
+    val priceChangePercentage7d: Double?,
+    @Json(name = "price_change_percentage_7d_in_currency")
+    val priceChangePercentage7dInCurrency: PriceChangePercentage7dInCurrency?,
+    @Json(name = "roi")
+    val roi: Any?,
+    @Json(name = "total_supply")
+    val totalSupply: Double?,
+    @Json(name = "total_value_locked")
+    val totalValueLocked: Any?,
+    @Json(name = "total_volume")
+    val totalVolume: TotalVolume?
+)
